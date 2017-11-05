@@ -1,0 +1,27 @@
+
+body{
+    background-image: url("reg.jpg");
+
+
+}
+.form{
+    color: black;
+}
+
+.container ul {
+    color: black;
+    list-style: none;
+
+}
+
+.container form{
+    margin-left: 42%;
+}
+
+.container input{
+    padding: 5px 10px;
+}
+
+.input submit{
+
+}

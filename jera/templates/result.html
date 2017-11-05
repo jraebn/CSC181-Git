@@ -1,0 +1,38 @@
+{% extends 'back-to-home.html'%}
+
+
+{% block body %}
+
+<div class="container1">
+    {% if result|length < 1 %}
+        <h3 style="color: black; text-align: center;margin-right: 40%">User not found.</h3>
+    {% else %}
+     <table>
+	<thead>
+	<th>ID Number</th>
+	<th>First Name</th>
+	<th>Middle Name</th>
+	<th>Last Name</th>
+    <th>Sex</th>
+    <th>Course</th>
+	</thead>
+	<tbody>
+		{% for data in result %}
+		<tr>
+        <form action="/update" method="POST">
+			<td><input type="text" name="idnum" placeholder={{ data[0]}} value={{ data[0]}}></td>
+			<td><input type="text" name="firstname" placeholder={{ data[1]}} value={{ data[1]}}></td>
+			<td><input type="text" name="middlename" placeholder={{ data[2]}} value={{ data[2]}}></td>
+			<td><input type="text" name="lastname" placeholder={{ data[3]}} value={{ data[3]}}></td>
+            <td><input type="text" name="sex" placeholder={{ data[4]}} value={{ data[4]}}></td>
+            <td><input type="text" name="course" placeholder={{ data[5]}} value={{ data[5]}}></td>
+            <td><input type="hidden" name="copy" value={{ data[0] }}></td>
+            <td style="border: hidden; margin-left: 5px"><input type="submit" value="Update"></td>
+        </form>
+		</tr>
+		{% endfor %}
+	</tbody>
+	</table>
+    {% endif %}
+</div>
+{% endblock %}

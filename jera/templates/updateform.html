@@ -1,0 +1,13 @@
+{% extends 'back-to-home.html'%}
+
+
+{% block body %}
+
+<div class="container1">
+    <form action="/updating" method="POST">
+        {% for data in result %}
+        <input type="text" name="idnumber" value={{ data }}     >
+    </form>
+
+</div>
+{% endblock %}

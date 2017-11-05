@@ -1,0 +1,10 @@
+{% extends 'back-to-home.html' %}
+
+{% block body %}
+<div class="container2">
+    <form action="/delete" method="POST">
+    <input type="text" placeholder="Enter the id number here" name="idnum">
+    <input type="submit">
+    </form>
+</div>
+{% endblock %}

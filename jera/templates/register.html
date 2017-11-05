@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+    <link rel="stylesheet" type="text/css" href="\static\reg-design.css">
+</head>
+
+<div class="container">
+<h1 style="text-align: center; font-family: Calibri; color: black">Student Information</h1>
+<form action="/register" method="POST">
+    {{form.hidden_tag()}}
+    <div class="centerfied">
+    <br><h3 class="form">ID Number:</h3>
+    {{ form.idnum(placeholder = "ID Number") }} {% if form.idnum.errors %}
+        {% for error in form.idnum.errors %} {{ error }} {% endfor %} {% endif %}<br>
+    <br><h3 class="form">First Name:</h3>
+    {{ form.firstname(placeholder = "First Name") }} {% if form.firstname.errors %}
+        {% for error in form.firstname.errors %} {{ error }} {% endfor %} {% endif %}<br>
+    <br><h3 class="form">Middle Name:</h3>
+    {{ form.middlename(placeholder = "Middle Name") }} {% if form.middlename.errors %}
+        {% for error in form.middlename.errors %} {{ error }} {% endfor %} {% endif %}<br>
+    <br><h3 class="form">Last Name:</h3>
+    {{ form.lastname(placeholder = "Last Name") }} {% if form.lastname.errors %}
+        {% for error in form.lastname.errors %} {{ error }} {% endfor %} {% endif %}<br>
+    <br><h3 class="form">Sex:</h3>
+    {{form.sex(placeholder = "Sex")}} {% if form.sex.errors %}
+        {% for error in form.sex.errors %} {{ error }} {% endfor %} {% endif %}<br>
+        <h3 class="form">Course:</h3>
+    {{ form.course(placeholder = "Course") }} {% if form.course.errors %}
+        {% for error in form.course.errors %} {{ error }} {% endfor %} {% endif %}<br>
+
+        <br>{{ form.submit }}<button  style="margin-top: 10px; margin-bottom: 5%; margin-left: 8%;padding: 5px 10px;"><a href="/" style="text-decoration:none;color: inherit;">Cancel</a></button></div>
+        </div>
+        </form>
+
+</div>
+
+</body>
+
+
+</body>
+</html>
